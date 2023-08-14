@@ -34,9 +34,9 @@ body {
   font-size: 1.5em;
   white-space: nowrap;
   border-right: 4px solid;
-  width: 29ch;
+  width: 33ch;
 
-  animation: typing 5s steps(30) infinite, blink .5s infinite step-end alternate;
+  animation: typing 5s steps(33) infinite, blink .5s infinite step-end alternate;
   overflow: hidden;
 }
 
@@ -45,10 +45,10 @@ body {
     width: 0;
   }
   40% {
-    width: 29ch;
+    width: 33ch;
   }
   70% {
-    width: 29ch;
+    width: 33ch;
   }
   100% {
     width: 0;

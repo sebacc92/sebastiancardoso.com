@@ -1,0 +1,9 @@
+{
+  "about": {
+    "p1": "Hey! My name is Sebastian Cardoso, I am a web developer in Argentina, Buenos Aires. I really like to write code and build products that help people solve their problems.",
+    "p2": "I was born in Montevideo, Uruguay and moved to Buenos Aires in 1996. I love to travel, meet new people and learn about different cultures.",
+    "p3": "I currently work at {{link}} as a Frontend developer, where I work with technologies such as React and Cypress.",
+    "p4": "In my free time I like to read books, watch movies, play video games and swim.",
+    "title": "About me"
+  }
+}
