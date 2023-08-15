@@ -18,8 +18,7 @@ export default component$(() => {
                         {t('about.p2@@I was born in Montevideo, Uruguay and moved to Buenos Aires in 1996. I love to travel, meet new people and learn about different cultures.')}
                     </p>
                     <br />
-                    <p>
-                        {t('about.p3@@I currently work at {{link}} as a Frontend developer, where I work with technologies such as React and Cypress.', { link: <a href="https://morfi.pro/">Morfi</a> })}
+                    <p dangerouslySetInnerHTML={t('about.p3@@I currently work at {{link}} as a Frontend developer, where I use technologies such as React and Cypress.', { link: '<a href="https://morfi.pro/" class="text-custom-blue">Morfi</a>' })}>
                     </p>
                     <br />
                     <p>

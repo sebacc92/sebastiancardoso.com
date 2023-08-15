@@ -4,9 +4,7 @@ import { useSpeakConfig, useSpeakLocale } from 'qwik-speak';
 
 export const ChangeLocale = component$(() => {
   const isVisibleSelectLocale = useSignal(false)
-  console.log('isVisibleSelectLocale', isVisibleSelectLocale.value)
   const selectedValue = useSpeakLocale();
-  console.log('selectedValue', selectedValue)
 
   const getLabelByLang = (lang: string) => {
     switch (lang) {
@@ -22,7 +20,6 @@ export const ChangeLocale = component$(() => {
   const config = useSpeakConfig();
 
   const changeLocale$ = $((newLocale: SpeakLocale) => {
-    console.log('newLocale', newLocale)
     // Store locale in a cookie 
     document.cookie = `locale=${JSON.stringify(newLocale)};max-age=86400;path=/`;
     location.reload();

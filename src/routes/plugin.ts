@@ -3,11 +3,8 @@ import type { RequestHandler } from '@builder.io/qwik-city';
 import { config } from '../speak-config';
 
 export const onRequest: RequestHandler = ({ request, locale }) => {
-  console.log('AAAAAAAAAAAAAAA')
   const cookie = request.headers?.get('cookie');
-  console.log('cookie', cookie)
   const acceptLanguage = request.headers?.get('accept-language');
-  console.log('acceptLanguage', acceptLanguage)
 
   let lang: string | null = null;
   // Try whether the language is stored in a cookie
@@ -26,7 +23,6 @@ export const onRequest: RequestHandler = ({ request, locale }) => {
 
   // Check supported locales
   lang = config.supportedLocales.find(value => value.lang === lang)?.lang || config.defaultLocale.lang;
-  console.log('lang', lang)
 
   // Set Qwik locale
   locale(lang);

@@ -2,7 +2,7 @@
   "about": {
     "p1": "Hola! Mi nombre es Sebastián Cardoso, soy Desarrollador Web y vivo en Argentina, Buenos Aires. Me gusta mucho escribir código y construir productos que ayudan a las personas a resolver sus problemas.",
     "p2": "Nací en Montevideo, Uruguay y me mudé a Buenos Aires en 1996. Me gusta mucho viajar, conocer gente nueva y aprender sobre diferentes culturas.",
-    "p3": "Actualmente trabajo en {{link}} como desarrollador Frontend, donde trabajo con tecnologías como React y Cypress.",
+    "p3": "Actualmente trabajo en {{link}} como desarrollador Frontend, donde uso tecnologías como React y Cypress.",
     "p4": "En mi tiempo libre me gusta leer libros, ver películas, jugar videojuegos y nadar.",
     "title": "Acerca de"
   }
