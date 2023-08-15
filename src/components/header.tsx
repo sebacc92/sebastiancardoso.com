@@ -11,7 +11,7 @@ export default component$(() => {
             <div class="m-[0_auto] max-w-4xl px-6 sm:px-4">
                 <nav class="flex items-center justify-between">
                     <Link class="grid grid-flow-col items-center" href="/">
-                        <img alt="Sebastian Cardoso" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="mr-3 rounded-full opacity-100" style="color:transparent" src="https://sebastiancardoso.com/images/yo4.jpeg" />
+                        <img alt="Sebastian Cardoso" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="mr-3 rounded-full opacity-100" style="color:transparent" src="https://sebastiancardoso.com/images/me.webp" />
                         <span class="font-bold">Sebastián Cardoso</span>
                     </Link>
                     <div class="flex flex-row-reverse items-center gap-3 sm:flex-row sm:gap-4">
