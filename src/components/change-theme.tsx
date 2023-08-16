@@ -15,7 +15,6 @@ export const ChangeTheme = component$(() => {
     });
 
     useVisibleTask$(() => {
-        console.log('aaa')
         const result = new RegExp('(?:^|; )' + encodeURIComponent('theme') + '=([^;]*)').exec(document.cookie);
         if(result){
             const cookieTheme = JSON.parse(result[1]);

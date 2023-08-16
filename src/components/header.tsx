@@ -1,5 +1,5 @@
 import { component$, useSignal } from "@builder.io/qwik";
-import { Link } from '@builder.io/qwik-city';
+import { Link, useLocation } from '@builder.io/qwik-city';
 import { ChangeLocale } from "./change-locale";
 import { useTranslate } from "qwik-speak";
 import { ChangeTheme } from "./change-theme";
@@ -8,6 +8,8 @@ export default component$(() => {
     const isOpenMenu = useSignal(false);
     
     const t = useTranslate();
+    const location = useLocation();
+    const pathname = location.url.pathname;
     
     return (
         <header class={`sticky top-0 z-10 border-b-[1px] border-solid border-neutral-100 bg-white/75 py-2 dark:border-neutral-900 dark:bg-black/75 sm:py-3 sticky top-0 z-10 border-b-[1px] border-solid border-neutral-100 bg-white/75 py-2 dark:border-neutral-900 dark:bg-black/75 sm:py-3 ${isOpenMenu.value ? '' : 'backdrop-blur-xl'}`}>
@@ -38,10 +40,10 @@ export default component$(() => {
                                     </button>
                                 </div>
                                 <ul class="margin-0 flex h-full flex-1 flex-col items-center justify-center space-y-5 text-2xl" onClick$={() => isOpenMenu.value = !isOpenMenu.value}>
-                                    <li><Link class="opacity-100 transition-opacity" href="/">Home</Link></li>
-                                    <li><Link class="opacity-50 hover:opacity-100 transition-opacity" href="/about">About</Link></li>
-                                    <li><Link class="opacity-50 hover:opacity-100 transition-opacity" href="/blog">Blog</Link></li>
-                                    <li><Link class="opacity-50 hover:opacity-100 transition-opacity" href="/projects">Projects</Link></li>
+                                    <li><Link class={`transition-opacity hover:opacity-100 ${pathname === '/' ? 'opacity-100' : 'opacity-50'}`} href="/">Home</Link></li>
+                                    <li><Link class={`transition-opacity hover:opacity-100 ${pathname === '/about/' ? 'opacity-100' : 'opacity-50'}`} href="/about">About</Link></li>
+                                    <li><Link class={`transition-opacity hover:opacity-100 ${pathname === '/blog/' ? 'opacity-100' : 'opacity-50'}`} href="/blog">Blog</Link></li>
+                                    <li><Link class={`transition-opacity hover:opacity-100 ${pathname === '/projects/' ? 'opacity-100' : 'opacity-50'}`} href="/projects">Projects</Link></li>
                                 </ul>
                             </nav>}
                         </div>
