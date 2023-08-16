@@ -1,18 +1,32 @@
-import { $, component$, useSignal } from '@builder.io/qwik';
+import { $, component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
 
 export const ChangeTheme = component$(() => {
-    const theme = useSignal('light')
+    const theme = useSignal('dark')
 
     const changeTheme$ = $((newTheme: string) => {
         // Store theme in a cookie
         document.cookie = `theme=${JSON.stringify(newTheme)};max-age=86400;path=/`;
-        theme.value = newTheme;
-        if (newTheme === "dark") {
+        theme.value = newTheme
+        if (theme.value == 'dark') {
             document.documentElement.classList.add("dark");
         } else {
             document.documentElement.classList.remove("dark");
         }
     });
+
+    useVisibleTask$(() => {
+        console.log('aaa')
+        const result = new RegExp('(?:^|; )' + encodeURIComponent('theme') + '=([^;]*)').exec(document.cookie);
+        if(result){
+            const cookieTheme = JSON.parse(result[1]);
+            if (cookieTheme == 'dark') {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+            theme.value = cookieTheme
+        }
+    })
 
     return (
         <div class="relative">
@@ -23,7 +37,6 @@ export const ChangeTheme = component$(() => {
                         class="relative flex h-10 w-10 items-center justify-center rounded-full outline-none transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:ring-neutral-200 dark:focus:ring-neutral-600 opacity-50"
                         type="button"
                         aria-haspopup="listbox"
-                        aria-expanded="false"
                         data-headlessui-state=""
                         onClick$={() => changeTheme$('dark')}
                     >
@@ -37,7 +50,6 @@ export const ChangeTheme = component$(() => {
                         class="relative flex h-10 w-10 items-center justify-center rounded-full outline-none transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:ring-neutral-200 dark:focus:ring-neutral-600 opacity-50"
                         type="button"
                         aria-haspopup="listbox"
-                        aria-expanded="false"
                         data-headlessui-state=""
                         onClick$={() => changeTheme$('light')}
                     >
