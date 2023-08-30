@@ -9,7 +9,7 @@ export default component$(() => {
             <div class="flex mt-8 ">Developed with<Link href="https://qwik.builder.io/"><QwikLogo /></Link></div>
                 <hr class="mt-2 w-full border-t border-neutral-100 dark:border-neutral-800" />
                 <div class="flex items-center justify-between px-1 py-4 text-sm text-neutral-500">
-                    <span>
+                    <span class="dark:text-white">
                         © 2023 Sebastián Cardoso
                     </span>
                     <div class="flex items-center">
