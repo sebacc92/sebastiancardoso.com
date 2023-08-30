@@ -6,7 +6,7 @@ export default component$(() => {
     return (
         <footer>
             <div class="m-[0_auto] max-w-4xl px-6 sm:px-4 ">
-            <div class="flex mt-8 ">Developed with<Link href="https://qwik.builder.io/"><QwikLogo /></Link></div>
+            <div class="flex mt-8 ">Developed with<Link href="https://qwik.builder.io/" aria-label="Link to Qwik.js"><QwikLogo /></Link></div>
                 <hr class="mt-2 w-full border-t border-neutral-100 dark:border-neutral-800" />
                 <div class="flex items-center justify-between px-1 py-4 text-sm text-neutral-500">
                     <span class="dark:text-white">
