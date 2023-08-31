@@ -2,7 +2,7 @@ import { $, component$, useSignal } from '@builder.io/qwik';
 import type { SpeakLocale } from 'qwik-speak';
 import { useSpeakConfig, useSpeakLocale } from 'qwik-speak';
 
-export const ChangeLocale = component$(() => {
+export const ChangeLocale = component$((props) => {
   const isVisibleSelectLocale = useSignal(false)
   const selectedValue = useSpeakLocale();
 
@@ -22,6 +22,7 @@ export const ChangeLocale = component$(() => {
   const changeLocale$ = $((newLocale: SpeakLocale) => {
     // Store locale in a cookie 
     document.cookie = `locale=${JSON.stringify(newLocale)};max-age=86400;path=/`;
+    
     location.reload();
   });
 

@@ -1,0 +1,49 @@
+---
+title: Conociendo Qwik.js
+---
+<div class="flex-grow m-[0_auto] max-w-4xl px-6 sm:px-4 ">
+<article class="prose lg:prose-xl prose-stone dark:prose-invert">
+
+# Optimizando la Web: Más Allá de la Hidratación
+
+La web moderna ha evolucionado a pasos agigantados, y con ella, las técnicas y herramientas que utilizamos para construir experiencias digitales. Una de estas técnicas es la hidratación, un proceso que permite añadir interactividad a páginas HTML renderizadas en el servidor. Sin embargo, como con cualquier herramienta, es esencial entender sus ventajas y desventajas.
+
+## ¿Qué es la Hidratación?
+
+La hidratación es una solución para añadir interactividad a páginas HTML renderizadas en el servidor. En desarrollo web, la hidratación convierte una página web HTML estática en una página web dinámica al adjuntar manejadores de eventos a los elementos HTML. Aunque esta definición se centra en adjuntar manejadores de eventos al HTML estático, la verdadera complejidad y coste de la hidratación radica en saber qué manejadores de eventos necesitamos y dónde deben adjuntarse.
+
+## El Problema con la Hidratación
+
+La hidratación es un término que ha ganado popularidad en el mundo del desarrollo web, especialmente con la aparición de frameworks modernos como React, Vue y Angular. Sin embargo, a pesar de su prevalencia, la hidratación no está exenta de desafíos.
+
+En esencia, la hidratación puede considerarse un "sobrecoste" porque implica trabajo que podría evitarse y aún así llegar al mismo resultado. Pero, ¿qué significa realmente este "sobrecoste"? Al hablar de hidratación, nos referimos al proceso de tomar una página web HTML estática (generalmente generada por el servidor) y convertirla en una página web dinámica en el lado del cliente. Esto se logra adjuntando manejadores de eventos y reconstruyendo el estado de la aplicación y el marco.
+
+La verdadera complicación de la hidratación radica en dos aspectos principales:
+
+1. **Recuperación del Estado de la Aplicación (APP_STATE):** Cuando una página se renderiza en el servidor, se genera un estado específico de la aplicación. Este estado puede incluir datos del usuario, configuraciones específicas y otros detalles que hacen que la página sea única para el usuario. Durante la hidratación, este estado debe ser reconstruido en el cliente para que la página funcione como se espera.
+
+2. **Recuperación del Estado del Marco (FRAMEWORK_STATE):** Además del estado de la aplicación, también hay un estado interno que el framework o la biblioteca utiliza para gestionar la página. Este estado incluye detalles sobre qué componentes están presentes, cómo están interconectados y cómo deben interactuar entre sí.
+
+El proceso de reconstrucción de estos estados implica ejecutar ansiosamente el código de la aplicación en el navegador. Esta ejecución ansiosa puede ser costosa en términos de rendimiento, especialmente en dispositivos móviles con recursos limitados. Además, es puramente un sobrecoste porque, en esencia, estamos reconstruyendo información que el servidor ya había recopilado y enviado al cliente en forma de HTML estático.
+
+Además, este proceso puede aumentar el tiempo que tarda una página en volverse interactiva para el usuario. Si bien la página puede parecer cargada visualmente, la interactividad puede retrasarse debido al tiempo que lleva la hidratación.
+
+## Reanudación: Una Alternativa sin Sobrecostes
+
+La reanudación es una técnica que busca eliminar el sobrecoste de la hidratación. En lugar de reconstruir la información que el servidor ya había recopilado, la resumabilidad se centra en transferir toda la información del servidor al cliente. Esto permite al cliente razonar sobre la aplicación sin tener que descargar ansiosamente el código de la aplicación. Solo una interacción del usuario obliga al cliente a descargar el código para manejar esa interacción específica.
+
+Qwik, un marco de trabajo mencionado en los artículos, está diseñado en torno a la resumabilidad y logra un excelente rendimiento de inicio. En lugar de hidratar ansiosamente todo, Qwik permite la creación perezosa de manejadores de eventos, lo que resulta en tiempos de inicio de aplicación más rápidos.
+
+## Conclusión
+
+Mientras que la hidratación ha sido una técnica popular para añadir interactividad a las páginas web, no está exenta de problemas. La resumabilidad emerge como una alternativa prometedora que reduce el sobrecoste y mejora el rendimiento. Al comprender estas técnicas y sus implicaciones, podemos tomar decisiones más informadas al construir experiencias web y ofrecer a los usuarios finales una experiencia más rápida y eficiente.
+
+## Fuentes:
+
+- [Qwik - Resumable](https://qwik.builder.io/docs/concepts/resumable/)
+- [Qwik - Think Qwik](https://qwik.builder.io/docs/concepts/think-qwik/)
+- [Qwik - Progressive](https://qwik.builder.io/docs/concepts/progressive/)
+- [Qwik - Reactivity](https://qwik.builder.io/docs/concepts/reactivity/)
+- [Builder.io Blog - Hydration is Pure Overhead](https://www.builder.io/blog/hydration-is-pure-overhead)
+</article>
+</div>
