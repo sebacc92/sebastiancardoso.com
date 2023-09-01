@@ -2,7 +2,7 @@ import { $, component$, useSignal } from '@builder.io/qwik';
 import type { SpeakLocale } from 'qwik-speak';
 import { useSpeakConfig, useSpeakLocale } from 'qwik-speak';
 
-export const ChangeLocale = component$((props) => {
+export const ChangeLocale = component$(() => {
   const isVisibleSelectLocale = useSignal(false)
   const selectedValue = useSpeakLocale();
 

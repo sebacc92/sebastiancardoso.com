@@ -25,11 +25,11 @@ export default component$(() => {
     return (
         <div class="flex-grow m-[0_auto] max-w-4xl px-6 sm:px-4 ">
             <main class="mt-4">
-                <h1 class="font-bold text-lg">Blog.</h1>
+                <h1 class="font-bold text-2xl">Blog</h1>
                 {articles.map(article => (
                     <div
                         key={article.slug}
-                        class="flex justify-between items-center rounded-lg shadow-lg hover:shadow-xl cursor-pointer p-4 mb-4"
+                        class="flex justify-between items-center rounded-lg hover:shadow-md cursor-pointer p-4 mb-4"
                         onClick$={() => nav(`/blog/${article.slug}`)}
                     >
                         <p class="text-gray-500 text-sm mr-8">{article.date}</p>
