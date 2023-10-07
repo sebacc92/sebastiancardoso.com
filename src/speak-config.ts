@@ -7,8 +7,8 @@ export const config: SpeakConfig = {
     { lang: 'en-US', currency: 'USD', timeZone: 'America/Los_Angeles' }
   ],
   assets: [
-    'app', // Translations shared by the pages
     'about',
+    'app',
     'header',
     'home'
   ]
